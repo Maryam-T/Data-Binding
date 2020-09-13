@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="photoModel"
+                  type="com.marand.databinding.model.Photo"/>
+
+        <variable name="photoViewModel"
+                  type="com.marand.databinding.ui.PhotoViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="15dp">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/enter_id"/>
+
+        <ImageView
+                android:id="@+id/photo_image"
+                app:imageResource="@{photoModel.thumbnailUrl}"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="15dp"/>
+
+        <TextView
+                android:id="@+id/photo_title"
+                android:text="@{photoModel.title}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+        <EditText
+                android:id="@+id/photo_id"
+                android:text="@={``+photoViewModel.id}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+        <Button
+                android:onClick="@{photoViewModel::onGetPhotoButtonClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_photo"
+                android:layout_marginTop="15dp"/>
+
+        <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+</layout>

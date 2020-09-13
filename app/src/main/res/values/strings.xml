@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataBinding</string>
+    <string name="enter_id">Enter an Id between 1 and 5000 for getting a photo!</string>
+    <string name="get_photo">Get The Photo!</string>
+    <string name="success">Photo got successfully!</string>
+    <string name="error">Some error just happened!</string>
+</resources>
