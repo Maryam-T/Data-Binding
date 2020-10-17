@@ -1,6 +1,5 @@
 package com.marand.databinding.ui
 
-import android.view.View
 import androidx.lifecycle.ViewModel
 import com.marand.databinding.repository.PhotoRepository
 
@@ -9,7 +8,7 @@ class PhotoViewModel: ViewModel() {
     var id: Int = 0
     var photoListener: PhotoListener? = null
 
-    fun onGetPhotoButtonClick(view: View) {
+    fun onGetPhotoButtonClick() {
         photoListener?.onLoading()
         if (!isPhotoIdValid()) {
             photoListener?.onError("Invalid id...")

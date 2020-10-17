@@ -40,7 +40,7 @@ class PhotoActivity : AppCompatActivity(), PhotoListener {
                 if (it != null) {
                     photoBinding.photoModel = it
                     showToast(getString(R.string.success))
-                } else{
+                } else {
                     showToast(getString(R.string.error))
                 }
             })
